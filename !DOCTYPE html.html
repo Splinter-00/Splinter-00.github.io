@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Muebles</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Pantalla de bienvenida -->
+    <div class="welcome-screen" id="welcomeScreen">
+        <h1 class="welcome-title">Muebles en Venta</h1>
+        <button class="btn btn-lg" id="enterButton">ABRIR</button>
+        <div class="admin-link" id="adminLink">Acceder como admin</div>
+        
+        <div class="admin-form" id="adminForm">
+            <div class="form-group">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" placeholder="Ingrese su usuario">
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" placeholder="Ingrese su contraseña">
+            </div>
+            <button class="btn" id="loginButton">Iniciar sesión</button>
+        </div>
+    </div>
+
+    <!-- Catálogo de productos -->
+    <div class="catalog" id="catalog">
+        <div class="header">
+            <div class="header-content">
+                <div class="logo">Muebles en Venta</div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="products-grid" id="productsGrid">
+                <!-- Los productos se cargarán dinámicamente aquí -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel de administrador -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="header">
+            <div class="header-content">
+                <div class="logo">Panel de Administrador</div>
+                <div class="admin-controls">
+                    <div class="user-count">
+                        <i>👥</i>
+                        <span id="userCounter">0</span> usuarios conectados
+                    </div>
+                    <button class="logout-btn" id="logoutButton">Cerrar Sesión</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="admin-header">
+                <h2 class="admin-title">Administrar Productos</h2>
+            </div>
+
+            <div class="add-product-form">
+                <h3 class="form-title">Agregar Nuevo Producto</h3>
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="productName">Nombre del producto:</label>
+                            <input type="text" id="productName" placeholder="Ej. Sofá de 3 plazas">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="productPrice">Precio:</label>
+                            <input type="text" id="productPrice" placeholder="Ej. $50000">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="productDescription">Descripción:</label>
+                    <textarea id="productDescription" placeholder="Describe el producto, sus características, dimensiones, etc."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="productImages">Imágenes (puede seleccionar múltiples):</label>
+                    <input type="file" id="productImages" multiple accept="image/*">
+                    <div class="img-preview" id="imgPreview"></div>
+                </div>
+
+                <button class="btn" id="addProductButton">Agregar Producto</button>
+            </div>
+
+            <div class="admin-products" id="adminProducts">
+                <!-- Los productos se cargarán dinámicamente aquí -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modales -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">×</span>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <div class="confirm-modal" id="confirmModal">
+        <div class="confirm-content">
+            <h3 class="confirm-title">¿Estás seguro de que deseas eliminar este producto?</h3>
+            <div class="confirm-buttons">
+                <button class="btn-cancel" id="cancelDelete">Cancelar</button>
+                <button class="btn-confirm" id="confirmDelete">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
